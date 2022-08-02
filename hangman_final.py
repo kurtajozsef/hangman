@@ -1,8 +1,10 @@
 import random
 import os
 
+
 def clear_console():
     os.system('cls')
+
 
 def get_guess() -> str:
     guess = ""
@@ -10,10 +12,12 @@ def get_guess() -> str:
         guess = input("Guess a letter:").lower()
     return guess
 
-def display_blanks(display:list):
+
+def display_blanks(display: list):
     for letter in display:
         print(letter, end=" ")
     print("")
+
 
 logo = """
  _                                             
@@ -77,12 +81,12 @@ hangman_pics = ['''
 =========''']
 
 word_list = ('ant baboon badger bat bear beaver camel cat clam cobra cougar '
-         'coyote crow deer dog donkey duck eagle ferret fox frog goat '
-         'goose hawk lion lizard llama mole monkey moose mouse mule newt '
-         'otter owl panda parrot pigeon python rabbit ram rat raven '
-         'rhino salmon seal shark sheep skunk sloth snake spider '
-         'stork swan tiger toad trout turkey turtle weasel whale wolf '
-         'wombat zebra ').split()
+             'coyote crow deer dog donkey duck eagle ferret fox frog goat '
+             'goose hawk lion lizard llama mole monkey moose mouse mule newt '
+             'otter owl panda parrot pigeon python rabbit ram rat raven '
+             'rhino salmon seal shark sheep skunk sloth snake spider '
+             'stork swan tiger toad trout turkey turtle weasel whale wolf '
+             'wombat zebra ').split()
 
 clear_console()
 print(logo)
@@ -97,7 +101,7 @@ while user_input.upper() == "Y":
     for _ in range(word_length):
         display += "_"
     print(hangman_pics[0])
-    
+
     while not ended:
         display_blanks(display)
         guess = get_guess()
@@ -121,7 +125,3 @@ while user_input.upper() == "Y":
     print(f"The correct word was: {chosen_word}")
     user_input = input("Start again? Y/N ")
 print("Thanks for playing! See you soon!")
-        
-    
-
-
